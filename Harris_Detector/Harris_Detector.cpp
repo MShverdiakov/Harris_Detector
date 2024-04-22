@@ -49,9 +49,8 @@ int main()
             if ((int)dst_norm.at<float>(i, j) > thresh) {
                 cv::circle(dst_norm_scaled, cv::Point(j, i), 5, cv::Scalar(255), 2, 8, 0);
 
-                //
-                //corners.push_back(std::make_pair(j, i));
-                //std::cout << "x " << j << " y " << i;
+                corners.push_back(std::make_pair(j, i));
+                std::cout << "x " << j << " y " << i;
             }
         }
     }
@@ -65,8 +64,8 @@ int main()
         //cv::Point corner = corners[i];
         
     }
-    //area_size = calculateArea(corners);
-    //std::cout << "Estimated area size: " << area_size << std::endl;
+    area_size = calculateArea(corners);
+    std::cout << "Estimated area size: " << area_size << std::endl;
 
     cv::waitKey();
     return 0;
